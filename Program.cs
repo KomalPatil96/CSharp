@@ -4,27 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Constructor
+namespace AccessModifires
 {
-    class car
+    class Program
     {
-        //public string model;
-
-        public car(string modelName)
-        {
-            Console.WriteLine(modelName);
-            // model = "Audi";
-            //model = modelName;
-
-        }
         static void Main(string[] args)
         {
-             //car mycar = new car();                //without parameter
-             //Console.WriteLine(mycar.model);
+            //private (does not access methods or other data in another class)
+            car mycar = new car();
 
-            car mycar2 = new car("Audi");      //with parameter
-            //Console.WriteLine(mycar2.model);
-            Console.ReadLine();
+
+            //public
+            //car2 mycar2 = new car2();
+            //mycar2.name = "Audi";
+            //mycar2.color = "White";
+            //mycar2.printinformation();
+
+
+            //internal
+            internalAccessModifires i1 = new internalAccessModifires();
+            i1.name = "Audi";
+            i1.color = "black";
+            i1.printinformation2();
+
+            //protected
+
+
         }
     }
-}  
+}
