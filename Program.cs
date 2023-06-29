@@ -4,36 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace methodAccess
+namespace Constructor
 {
     class car
     {
-        string color = "Red";
-        int maxspeed = 200;
+        //public string model;
+
+        public car(string modelName)
+        {
+            Console.WriteLine(modelName);
+            // model = "Audi";
+            //model = modelName;
+
+        }
         static void Main(string[] args)
         {
-            car mycar = new car();
-            Console.WriteLine(mycar.color);
-            Console.WriteLine(mycar.maxspeed);
-            demospeed();
+             //car mycar = new car();                //without parameter
+             //Console.WriteLine(mycar.model);
 
-            car2 mycar2 = new car2();
-            Console.WriteLine(mycar2.name);
-            Console.WriteLine(mycar2.maxspeed);
-            Console.ReadLine();         
-        }
-
-       static void demospeed()
-        {
-            Console.WriteLine("This is new car.");
+            car mycar2 = new car("Audi");      //with parameter
+            //Console.WriteLine(mycar2.model);
             Console.ReadLine();
         }
-
     }
-
-    class car2
-    {
-       public string name = "Audi";
-       public int maxspeed = 200;
-    }
-}
+}  
