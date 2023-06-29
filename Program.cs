@@ -4,17 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace concatiation
+namespace userinputstring
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string x = "Komal";
-            string y = " Patil";
-            string result = string.Concat(x, y);
-            Console.WriteLine("result:" + result);
+            string username;
+
+            Console.WriteLine("What is your name?");
+            username = Console.ReadLine();
+            Console.WriteLine("Hello " + username);
             Console.ReadLine();
+
         }
     }
 }
