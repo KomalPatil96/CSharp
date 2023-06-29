@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace objectCreation
+namespace methodAccess
 {
     class car
     {
@@ -13,16 +13,27 @@ namespace objectCreation
         static void Main(string[] args)
         {
             car mycar = new car();
+            Console.WriteLine(mycar.color);
             Console.WriteLine(mycar.maxspeed);
+            demospeed();
 
             car2 mycar2 = new car2();
-            Console.WriteLine(mycar2.color);
+            Console.WriteLine(mycar2.name);
+            Console.WriteLine(mycar2.maxspeed);
+            Console.ReadLine();         
+        }
+
+       static void demospeed()
+        {
+            Console.WriteLine("This is new car.");
             Console.ReadLine();
         }
+
     }
 
     class car2
     {
-        public string color = "Red";
+       public string name = "Audi";
+       public int maxspeed = 200;
     }
 }
