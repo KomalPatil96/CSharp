@@ -4,32 +4,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AccessModifires
+namespace polymorphism
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //private (does not access methods or other data in another class)
-            car mycar = new car();
+            fruits f1 = new fruits();
+            fruits f2 = new Orange();    
+            fruits f3 = new Greeps();  //object create with base class & Child class
+            f1.colours();
+            f2.colours();
+            f3.colours();
+            Console.ReadLine();
+        }
+    }
 
+    class fruits
+    {
+        public virtual void colours()  //by using virtual keyword method can access to override a method
+        {
+            Console.WriteLine("variety of colors in fruits");
+            //Console.ReadLine();
+        }
+    }
 
-            //public
-            //car2 mycar2 = new car2();
-            //mycar2.name = "Audi";
-            //mycar2.color = "White";
-            //mycar2.printinformation();
+    class Orange:fruits
+    {
+        public override void colours()
+        {
+            Console.WriteLine("Orange color is orange");
+          //  Console.ReadLine();
+        }
+    }
 
-
-            //internal
-            internalAccessModifires i1 = new internalAccessModifires();
-            i1.name = "Audi";
-            i1.color = "black";
-            i1.printinformation2();
-
-            //protected
-
-
+    class Greeps: Orange
+    {
+        public override void colours()
+        {
+            Console.WriteLine("Greeps color is greenish");
+           // Console.ReadLine();
         }
     }
 }
