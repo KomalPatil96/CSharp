@@ -4,19 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace userinputstring
+namespace Arrays1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string username;
+            string[] cars = new string[4] { "Maruti", "BMW", "Ford", "Ferrari" };
+            Console.WriteLine(cars[2]);
+            Console.WriteLine("\n");
 
-            Console.WriteLine("What is your name?");
-            username = Console.ReadLine();
-            Console.WriteLine("Hello " + username);
+            for (int i = 0; i < cars.Length; i++)
+            {
+                Console.WriteLine(cars[i]);
+
+            }
+            Console.WriteLine("\n");
+
+            foreach (string car in cars)
+            {
+                Console.WriteLine(car);
+            }
             Console.ReadLine();
-
         }
     }
 }
