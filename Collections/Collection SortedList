@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+namespace CollectionSortedList
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            SortedList s1 = new SortedList();
+            s1.Add("001", "Komal Patil");
+            s1.Add("002", "Yogesh Patil");
+            s1.Add("003", "Sakhi Patil");
+            s1.Add("004", "Ram Patil");
+            s1.Add("005", "Ajay Patil");
+            s1.Add("006", "Sujal Patil");
+            s1.Add("007", "Shri Patil");
+
+            if (s1.ContainsValue("Komal Patil"))
+            {
+                Console.WriteLine("\n\n\t This student name is already in the list");
+
+            }
+            else
+            {
+                s1.Add("008", "Sham Patel");
+            }
+
+            ICollection key = s1.Keys;
+            foreach (string k in key)
+            {
+                Console.WriteLine("\n\t " + k + ": " + s1[k]);
+            }
+            Console.ReadLine();
+        }
+    }
+}
