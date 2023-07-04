@@ -4,44 +4,58 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace multipleInterface
+namespace interfaceAssignment1
 {
+
+    public interface ITransaction
+    {
+        double getamount();
+        void showTransaction();
+    }
+
+    public class Transaction :ITransaction
+    {
+        private string tCode;
+        private string date;
+        private double amount;
+
+        public Transaction()   //Constructor of class by default
+        {
+            tCode = "";
+            date = "";
+            amount = 0.0;
+        }
+
+        public Transaction(string c, string d, double a)  //Constructor with parameters
+        {
+            tCode = c;
+            date = d;
+            amount = a;
+        }
+
+        public double getamount()
+        {
+            return amount;
+        }
+
+        public void showTransaction()
+        {
+            Console.WriteLine("\n\n\t Transaction:{0} date :{1} Amount: Rs. {2} -/", tCode, date, getamount());
+        }
+    }
     class Program
     {
         static void Main(string[] args)
         {
-            car2 c2 = new car2();
-            c2.carDetails();
-            c2.carName();
-        }
-    }
+            Transaction t1 = new Transaction("001", "8/10/2012", 78900.00);
+            Transaction t2 = new Transaction("002", "9/10/2012", 451900.00);
 
-    interface vehicles
-    {
-        void carDetails();
-    }
-
-    interface car1
-    {
-        void carName();
-    }
-
-    class car2 : vehicles , car1
-    {
-        public string color = "White";
-        public string name = "Audi";
-        public void carDetails()
-        {
-            Console.WriteLine("color=" + color);
+            t1.showTransaction();
+            t2.showTransaction();
             Console.ReadLine();
 
         }
-
-        public void carName()
-        {
-            Console.WriteLine("Name=" + name);
-            Console.ReadLine();
-        }
-
     }
+
+    
 }
