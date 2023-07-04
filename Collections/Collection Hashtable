@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using System.Collections;
+
+namespace CollectionHashtable
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Hashtable ht = new Hashtable();
+            ht.Add("001", "Komal Patil");
+            ht.Add("002", "Yogesh Patil");
+            ht.Add("003", "Sakhi Patil");
+            ht.Add("004", "Ram Patil");
+            ht.Add("005", "Ajay Patil");
+            ht.Add("006", "Sujal Patil");
+            ht.Add("007", "Shri Patil");
+
+            if (ht.ContainsValue("Komal Patil")) 
+            {
+                Console.WriteLine("\n\n\t This student name is already in the list");
+
+            }
+            else
+            {
+                ht.Add("008", "Sham Patel");
+            }
+
+            ICollection key = ht.Keys;
+            foreach(string k in key)
+            {
+                Console.WriteLine("\n\t " + k + ": " + ht[k]);
+            }
+            Console.ReadLine();
+
+        }
+    }
+}
