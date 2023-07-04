@@ -1,0 +1,96 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using System.Collections;
+
+namespace CollectionQueue
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Queue q = new Queue();
+            q.Enqueue('A');
+            q.Enqueue('M');
+            q.Enqueue('G');
+            q.Enqueue('W');
+
+            Console.Write("\n\n\t Current Queue:");
+            foreach(char c in q)
+            {
+                Console.Write(c + " ");
+            }
+            Console.WriteLine();
+            q.Enqueue('V');
+            q.Enqueue('H');
+
+            Console.Write("\n\n\t Current Queue:");
+            foreach (char c in q)
+            {
+                Console.Write(c + " ");
+            }
+            Console.WriteLine();
+
+            Console.Write("\n\n\t Removing some values ");
+            
+            char ch = (char)q.Dequeue();
+            Console.Write("\n\n\t The removed value: {0}", ch);
+
+            ch = (char)q.Dequeue();
+            Console.Write("\n\n\t The removed value: {0}", ch);
+            Console.ReadLine();
+
+        }
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using System.Collections;
+
+namespace CollectionQueue
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Queue q = new Queue();
+            q.Enqueue('A');
+            q.Enqueue('M');
+            q.Enqueue('G');
+            q.Enqueue('W');
+
+            Console.Write("\n\n\t Current Queue:");
+            foreach(char c in q)
+            {
+                Console.Write(c + " ");
+            }
+            Console.WriteLine();
+            q.Enqueue('V');
+            q.Enqueue('H');
+
+            Console.Write("\n\n\t Current Queue:");
+            foreach (char c in q)
+            {
+                Console.Write(c + " ");
+            }
+            Console.WriteLine();
+
+            Console.Write("\n\n\t Removing some values ");
+            
+            char ch = (char)q.Dequeue();
+            Console.Write("\n\n\t The removed value: {0}", ch);
+
+            ch = (char)q.Dequeue();
+            Console.Write("\n\n\t The removed value: {0}", ch);
+            Console.ReadLine();
+
+        }
+    }
+}
