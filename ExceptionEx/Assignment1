@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace exceptionAssignment1
+{
+    class Program
+    {
+        static int A(string argument)
+        {
+            
+            if (argument == null)
+            {
+                Console.WriteLine();
+                throw new ArgumentNullException("argument");
+            }
+             
+            if (argument.Length == 0)
+            {
+                Console.WriteLine();
+                throw new ArgumentException("Zero-length string invalid", "argument");
+            }
+            Console.WriteLine();
+            return argument.Length;
+        }
+        static void Main(string[] args)
+        {
+            try
+            {
+                A(null);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            
+            try
+            {
+                A("");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            
+            Console.WriteLine(A("test"));
+            Console.ReadKey();
+        }
+    }
+}
